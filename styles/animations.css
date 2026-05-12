@@ -38,6 +38,20 @@
   }
 }
 
+@keyframes inspiration-rise {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+.inspiration-track {
+  animation: inspiration-rise 22s linear infinite;
+  will-change: transform;
+}
+
 .lab-grid {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),

@@ -3,7 +3,6 @@
 import React, { Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import FloatingShapes from './FloatingShapes';
 import NetworkVisualization from './NetworkVisualization';
 import ParticleSystem from './ParticleSystem';
 import { useMediaQuery } from '@/components/hooks/useMediaQuery';
@@ -45,7 +44,6 @@ export function HeroBackground() {
           <pointLight position={[-3, -1.8, 2]} intensity={0.55} color="#22c55e" />
           <ParticleSystem />
           <NetworkVisualization />
-          <FloatingShapes />
           <CameraRig />
         </Suspense>
       </Canvas>

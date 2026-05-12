@@ -30,6 +30,41 @@ const HeroBackground = dynamic(
   }
 );
 
+const INSPIRATIONS = [
+  {
+    name: 'Elon Musk',
+    org: 'Tesla / SpaceX',
+    achievement: 'Reusable rockets, EV scale',
+    image: '/images/inspirations/elon.jpg',
+  },
+  {
+    name: 'Deepinder Goyal',
+    org: 'Zomato',
+    achievement: 'Food-tech growth in India',
+    image: '/images/inspirations/goyal.jpg',
+  },
+  {
+    name: 'A. P. J. Abdul Kalam',
+    org: 'ISRO / DRDO',
+    achievement: 'Missile Man of India',
+    image: '/images/inspirations/kalam.jpg',
+  },
+  {
+    name: 'Mark Zuckerberg',
+    org: 'Meta (Facebook)',
+    achievement: 'Social platforms at scale',
+    image: '/images/inspirations/zuck.jpg',
+  },
+  {
+    name: 'Sundar Pichai',
+    org: 'Google',
+    achievement: 'Product leadership at Alphabet',
+    image: '/images/inspirations/pichai.jpg',
+  },
+] as const;
+
+const INSPIRATION_LOOP = [...INSPIRATIONS, ...INSPIRATIONS];
+
 export const Hero: React.FC = () => {
   const [currentRole, setCurrentRole] = useState(0);
   const mouse = useMousePosition();
@@ -77,7 +112,7 @@ export const Hero: React.FC = () => {
       />
 
       <div className="relative z-10 section-container">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.06fr_0.94fr] lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.76fr_0.6fr] lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -170,7 +205,7 @@ export const Hero: React.FC = () => {
           </motion.div>
 
           <motion.div
-            className="relative mx-auto w-full max-w-[430px] lg:max-w-[500px]"
+            className="relative mx-auto w-full max-w-[410px] lg:mx-0 lg:max-w-[460px] lg:-ml-6"
             style={{ rotateX, rotateY, transformPerspective: 1000 }}
             initial={{ opacity: 0, scale: 0.94, y: 22 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -219,6 +254,59 @@ export const Hero: React.FC = () => {
                 <span className="h-9 w-9 rounded-lg border border-cyan-300/30 bg-cyan-300/10" />
               </div>
             </GlassPanel>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 26 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            className="relative hidden w-full max-w-[320px] justify-self-end lg:block"
+          >
+            <div className="relative h-[560px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-6 backdrop-blur-xl">
+              <div className="absolute inset-y-6 left-4 w-px bg-gradient-to-b from-transparent via-white/25 to-transparent" />
+              <div className="absolute inset-y-6 right-4 w-px bg-gradient-to-b from-transparent via-white/25 to-transparent" />
+
+              <div className="relative z-10 flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-white/70 shadow-[0_0_12px_rgba(255,255,255,0.4)]" />
+                <p className="text-[11px] uppercase tracking-[0.35em] text-gray-400">
+                  My Inspiration
+                </p>
+              </div>
+
+              <div className="mt-6 h-[420px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_12%,black_88%,transparent)]">
+                <div className="inspiration-track flex flex-col gap-4" aria-hidden="true">
+                  {INSPIRATION_LOOP.map((person, index) => (
+                    <div
+                      key={`${person.name}-${index}`}
+                      className="flex items-start gap-3 rounded-2xl border border-white/5 bg-black/30 px-3 py-2"
+                    >
+                      <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white/5">
+                        <Image
+                          src={person.image}
+                          alt={person.name}
+                          width={72}
+                          height={72}
+                          sizes="48px"
+                          className="h-full w-full object-cover grayscale brightness-90 contrast-110"
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold text-white">
+                          {person.name}
+                        </p>
+                        <p className="text-xs text-gray-400">{person.org}</p>
+                        <p className="text-[11px] text-gray-500">
+                          {person.achievement}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-black/70 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/70 to-transparent" />
+            </div>
           </motion.div>
         </div>
       </div>
