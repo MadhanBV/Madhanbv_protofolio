@@ -147,10 +147,14 @@ export const Hero: React.FC = () => {
               </div>
             </div>
 
-            <p className="max-w-2xl text-balance text-lg leading-8 text-gray-300 sm:text-xl">
-              {PERSONAL_INFO.tagline} I build product-minded interfaces across
-              web systems, blockchain experiments, and design-led prototypes.
-            </p>
+            <ul className="max-w-2xl space-y-2 text-lg leading-8 text-gray-300 sm:text-xl">
+              {PERSONAL_INFO.tagline.split('\n').map((line) => (
+                <li key={line} className="flex items-start gap-3">
+                  <span className="mt-2.5 h-2 w-2 flex-none rounded-full bg-cyan-300/80" />
+                  <span className="text-balance">{line}</span>
+                </li>
+              ))}
+            </ul>
 
             <div className="flex flex-wrap gap-3">
               <AnimatedButton
@@ -159,7 +163,7 @@ export const Hero: React.FC = () => {
                 icon={<Download className="h-5 w-5" />}
                 href={PERSONAL_INFO.resume}
               >
-                Download Resume
+                MY RESUME
               </AnimatedButton>
               <AnimatedButton
                 variant="outline"
@@ -248,7 +252,7 @@ export const Hero: React.FC = () => {
                 <div>
                   <p className="text-xs text-gray-400">Current focus</p>
                   <p className="font-display text-sm font-semibold text-white">
-                    Product systems and blockchain UX
+                    Exploring The All Domains Available 
                   </p>
                 </div>
                 <span className="h-9 w-9 rounded-lg border border-cyan-300/30 bg-cyan-300/10" />

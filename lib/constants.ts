@@ -3,8 +3,9 @@ export const PERSONAL_INFO = {
   title: 'Computer Science Engineering Student',
   university: 'Presidency University',
   email: 'madhanbv.cse@gmail.com',
-  resume: '#',
-  tagline: 'Engineering ideas into meaningful digital experiences.',
+  resume: '/resume',
+  tagline:
+    'The highest commercial returns exist where society experiences the greatest pain.\nReal innovation minimizes human suffering while maximizing systemic efficiency.\nEntrepreneurship is the ultimate vehicle for turning global chaos into order.',
   socials: {
     github: 'https://github.com/MadhanBV',
     linkedin: 'https://www.linkedin.com/in/madhanbv/',
@@ -26,11 +27,10 @@ export const NAV_SECTIONS = [
 ];
 
 export const ROTATING_ROLES = [
-  'Full-Stack Developer',
-  'Design Thinker',
-  'Research Enthusiast',
-  'Startup Aspirant',
-  'Blockchain Explorer',
+  'ENTREPRENEURSHIP',
+  'STARTUP ASPIRANT',
+  'DESIGN THINKER',
+  'FULL STACK DEVELOPER',
 ];
 
 export const LAB_STATS = [
