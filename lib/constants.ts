@@ -36,8 +36,7 @@ export const ROTATING_ROLES = [
 export const LAB_STATS = [
   { label: 'Core Projects', value: 3, suffix: '+' },
   { label: 'Tech Domains', value: 6, suffix: '+' },
-  { label: 'Hackathons', value: 3, suffix: '+' },
-  { label: 'Focus Areas', value: 8, suffix: '' },
+  { label: 'Hackathons', value: 12, suffix: '' },
 ];
 
 export const ABOUT_CONTENT = {

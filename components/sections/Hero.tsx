@@ -175,7 +175,7 @@ export const Hero: React.FC = () => {
               </AnimatedButton>
             </div>
 
-            <div className="grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-3">
               {LAB_STATS.map((stat) => (
                 <GlassPanel
                   key={stat.label}
